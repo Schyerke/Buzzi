@@ -1,0 +1,8 @@
+name: BlockDash
+version: '${project.version}'
+main: org.me.blockdash.BlockDash
+api-version: 1.18
+commands:
+  spawn:
+    description: Go to spawn
+    usage: /spawn

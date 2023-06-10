@@ -1,0 +1,3 @@
+creare un'interfaccia html che consenta all'utente di
+ immettere i campi per costruire la select ed effettuare
+  ricerche sulla tabella customers del db classicmodels

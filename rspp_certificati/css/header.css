@@ -1,0 +1,23 @@
+* {
+    padding: 0;
+    margin: 0;
+}
+
+.header-css {
+    background-color: #007d60;
+    height: 80px;
+    width: 100%;
+
+}
+
+.header {
+    padding: 5pt;
+    text-align: center;
+    background: #0439b3;
+    color: white;
+    font-size: 30pt;
+}
+
+.icon {
+    vertical-align: middle;
+}

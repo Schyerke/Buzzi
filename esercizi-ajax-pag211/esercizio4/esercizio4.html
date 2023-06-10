@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <div class="buttons">
+        <button id="carica-source1">carica source1</button>
+        <button id="carica-source2">carica source2</button>
+        <button id="carica-source3">carica source3</button>
+        <button id="carica-source4">carica source4</button>
+        <button id="carica-source5">carica source5</button>
+        <button id="carica-source6">carica source6</button>
+    </div>
+
+    inizio documento
+    <hr />
+    <hr /><span id="target1">zona di visualizzazione 1</span><br>
+    <hr />
+    <hr /><span id="target2">zona di visualizzazione 2</span><br>
+    <hr />
+    <hr /><span id="target3">zona di visualizzazione 3</span><br>
+    <hr />fine documento
+
+    <script>
+        document.getElementById('carica-source1').onclick = (e) => ajax(1, 1)
+        document.getElementById('carica-source2').onclick = (e) => ajax(2, 1)
+        document.getElementById('carica-source3').onclick = (e) => ajax(3, 2)
+        document.getElementById('carica-source4').onclick = (e) => ajax(4, 2)
+        document.getElementById('carica-source5').onclick = (e) => ajax(5, 3)
+        document.getElementById('carica-source6').onclick = (e) => ajax(6, 3)
+
+        const carica = (e, target) => {
+            if(e.target.readyState === XMLHttpRequest.DONE && e.target.status === 200) {
+                if(document.getElementById(`target${target}`).innerHTML === `zona di visualizzazione ${target}`){
+                    document.getElementById(`target${target}`).innerHTML = '';
+                }
+                document.getElementById(`target${target}`).innerHTML += e.target.responseText
+            }
+        }
+
+        const ajax = (source, target) => {
+            let xhttp = new XMLHttpRequest()
+            xhttp.open('get', `d${source}.html`)
+            xhttp.send()
+            xhttp.onreadystatechange = (e) => carica(e, target)
+        }
+    </script>
+
+</body>
+
+</html>

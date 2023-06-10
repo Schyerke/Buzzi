@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <div class="buttons">
+        <button id="carica-source1">carica source1</button>
+        <button id="carica-source2">carica source2</button>
+        <button id="carica-source3">carica source3</button>
+    </div>
+
+    inizio documento
+    <br />
+    <div id="doc1">zona di visualizzazione di source1.htm</div><br />
+    <br />
+    <div id="doc2">zona di visualizzazione di source2.htm</div><br />
+    <br />
+    <div id="doc3">zona di visualizzazione di source3.htm</div><br />
+</body>
+
+<script>
+
+    document.getElementById('carica-source1').onclick = e => ajax(e, 1);
+    document.getElementById('carica-source2').onclick = e => ajax(e, 2);
+    document.getElementById('carica-source3').onclick = e => ajax(e, 3);
+
+    const carica = (e, docNumber) => {
+        if (e.target.readyState == XMLHttpRequest.DONE && e.target.status == 200) {
+            switch (docNumber) {
+                case 1: {
+                    document.getElementById('doc1').innerHTML = e.target.responseText
+                    break;
+                }
+                case 2: {
+                    document.getElementById('doc2').innerHTML = e.target.responseText
+                    break;
+                }
+                case 3: {
+                    document.getElementById('doc3').innerHTML = e.target.responseText
+                    break;
+                }
+                default: {
+                    alert("Error");
+                    return;
+                }
+            }
+        }
+    }
+
+    const ajax = (e, docNumber) => {
+        let xhttpRequest = new XMLHttpRequest()
+        let source = undefined;
+
+        switch (docNumber) {
+            case 1: {
+                source = "./source1.html"
+                break;
+            }
+            case 2: {
+                source = "./source2.html";
+                break;
+            }
+            case 3: {
+                source = "./source3.html"
+                break;
+            }
+        }
+
+        xhttpRequest.open("GET", source, true)
+        xhttpRequest.send();
+        xhttpRequest.onreadystatechange = e => carica(e, docNumber);
+    }
+
+
+</script>
+
+
+</html>

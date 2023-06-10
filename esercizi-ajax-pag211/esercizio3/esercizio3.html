@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    lista 1
+    <div class="elenco1">
+        <div id="s1e1">Stringa 1 elenco 1</div>
+        <div id="s2e1">Stringa 2 elenco 1</div>
+        <div id="s3e1">Stringa 3 elenco 1</div>
+        <div id='s4e1'>Stringa 4 elenco 1</div>
+    </div>
+    <br><br>
+    lista 2
+    <div class="elenco2">
+        <div id="s1e2">Stringa 1 elenco 2</div>
+        <div id="s2e2">Stringa 2 elenco 2</div>
+        <div id="s3e2">Stringa 3 elenco 2</div>
+        <div id="s4e2">Stringa 4 elenco 2</div>
+    </div>
+
+    <script>
+        document.getElementById('s1e1').addEventListener('mouseenter', e => ajax(1, 1))
+        document.getElementById('s2e1').addEventListener('mouseenter', e => ajax(2, 1))
+        document.getElementById('s3e1').addEventListener('mouseenter', e => ajax(3, 1)) 
+        document.getElementById('s4e1').addEventListener('mouseenter', e => ajax(4, 1)) 
+
+        document.getElementById('s1e2').addEventListener('mouseenter', e => ajax(1, 2)) 
+        document.getElementById('s2e2').addEventListener('mouseenter', e => ajax(2, 2)) 
+        document.getElementById('s3e2').addEventListener('mouseenter', e => ajax(3, 2)) 
+        document.getElementById('s4e2').addEventListener('mouseenter', e => ajax(4, 2)) 
+
+        const ajax = (stringa, elenco) => {
+            let doc = undefined;
+            if(elenco === 1){
+                switch(stringa) {
+                    case 1: {
+                        doc = "./doc1.html"
+                        break;
+                    }
+                    case 2: {
+                        doc = "./doc2.html"
+                        break;
+                    }
+                    case 3: {
+                        doc = "./doc3.html";
+                        break;
+                    }
+                    case 4: {
+                        doc = "./doc4.html";
+                        break;
+                    }
+                }
+            }
+            if (elenco === 2){
+                switch(stringa) {
+                    case 1: {
+                        doc = "./doc5.html"
+                        break;
+                    }
+                    case 2: {
+                        doc = "./doc6.html"
+                        break;
+                    }
+                    case 3: {
+                        doc = "./doc7.html"
+                        break
+                    }
+                    case 4: {
+                        doc = "./doc8.html"
+                        break;
+                    }
+                }
+            }
+
+            let xhttp = new XMLHttpRequest()
+            xhttp.open('get', doc, true)
+            xhttp.send()
+            xhttp.onreadystatechange = e => carica(e, stringa, elenco)
+        }
+
+        const carica = (e, stringa, elenco) => {
+            if(e.target.readyState == XMLHttpRequest.DONE && e.target.status === 200){
+                if(elenco === 1){
+                switch(stringa) {
+                    case 1: {
+                        document.getElementById('s1e1').innerHTML = e.target.responseText
+                        break;
+                    }
+                    case 2: {
+                        document.getElementById('s2e1').innerHTML = e.target.responseText
+                        break;
+                    }
+                    case 3: {
+                        document.getElementById('s3e1').innerHTML = e.target.responseText
+                        break;
+                    }
+                    case 4: {
+                        document.getElementById('s4e1').innerHTML = e.target.responseText
+                        break;
+                    }
+                }
+            }
+            if (elenco === 2){
+                switch(stringa) {
+                    case 1: {
+                        document.getElementById('s1e2').innerHTML = e.target.responseText
+                        break;
+                    }
+                    case 2: {
+                        document.getElementById('s2e2').innerHTML = e.target.responseText
+                        break;
+                    }
+                    case 3: {
+                        document.getElementById('s3e2').innerHTML = e.target.responseText
+                        break
+                    }
+                    case 4: {
+                        document.getElementById('s4e2').innerHTML = e.target.responseText
+                        break;
+                    }
+                }
+            }
+            }
+        }
+    </script>
+
+</body>
+</html>

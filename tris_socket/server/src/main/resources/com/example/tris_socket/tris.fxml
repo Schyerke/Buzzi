@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.shape.Line?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="513.0" prefWidth="631.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.tris_socket.TrisController">
+   <children>
+      <Label fx:id="lbl11" alignment="CENTER" layoutX="14.0" layoutY="51.0" onMouseClicked="#lbl11click" prefHeight="129.0" prefWidth="148.0" textAlignment="CENTER" textOverrun="CLIP">
+         <font>
+            <Font size="68.0" />
+         </font>
+      </Label>
+      <Line endX="344.0" endY="1.0" layoutX="114.0" layoutY="181.0" startX="-100.0" />
+      <Line endX="338.0" layoutX="120.0" layoutY="313.0" startX="-100.0" />
+      <Line endX="303.0" endY="141.0" layoutX="7.0" layoutY="302.0" startX="303.0" startY="-251.0" />
+      <Line endX="304.0" endY="123.0" layoutX="-142.0" layoutY="320.0" startX="303.0" startY="-269.0" />
+      <Label fx:id="lbl12" alignment="CENTER" layoutX="162.0" layoutY="51.0" onMouseClicked="#lbl12click" prefHeight="129.0" prefWidth="148.0" textAlignment="CENTER">
+         <font>
+            <Font size="68.0" />
+         </font>
+      </Label>
+      <Label fx:id="lbl13" alignment="CENTER" layoutX="310.0" layoutY="53.0" onMouseClicked="#lbl13click" prefHeight="129.0" prefWidth="148.0">
+         <font>
+            <Font size="68.0" />
+         </font>
+      </Label>
+      <Label fx:id="lbl23" alignment="CENTER" layoutX="310.0" layoutY="182.0" onKeyPressed="#lbl23click" prefHeight="129.0" prefWidth="148.0">
+         <font>
+            <Font size="68.0" />
+         </font>
+      </Label>
+      <Label fx:id="lbl22" alignment="CENTER" layoutX="162.0" layoutY="182.0" onKeyPressed="#lbl22click" prefHeight="129.0" prefWidth="148.0">
+         <font>
+            <Font size="68.0" />
+         </font>
+      </Label>
+      <Label fx:id="lbl21" alignment="CENTER" layoutX="14.0" layoutY="182.0" onMouseClicked="#lbl21click" prefHeight="129.0" prefWidth="148.0">
+         <font>
+            <Font size="68.0" />
+         </font>
+      </Label>
+      <Label fx:id="lbl31" alignment="CENTER" layoutX="14.0" layoutY="314.0" onMouseClicked="#lbl31click" prefHeight="129.0" prefWidth="148.0">
+         <font>
+            <Font size="68.0" />
+         </font>
+      </Label>
+      <Label fx:id="lbl32" alignment="CENTER" layoutX="162.0" layoutY="314.0" onMouseClicked="#lbl32click" prefHeight="129.0" prefWidth="148.0">
+         <font>
+            <Font size="68.0" />
+         </font>
+      </Label>
+      <Label fx:id="lbl33" alignment="CENTER" layoutX="310.0" layoutY="315.0" onMouseClicked="#lbl33click" prefHeight="129.0" prefWidth="148.0">
+         <font>
+            <Font size="68.0" />
+         </font>
+      </Label>
+   </children>
+</AnchorPane>

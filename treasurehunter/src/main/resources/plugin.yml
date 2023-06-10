@@ -1,0 +1,4 @@
+name: TreasureHunter
+version: '${project.version}'
+main: org.me.treasurehunter.TreasureHunter
+api-version: 1.18

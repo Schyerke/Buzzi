@@ -1,0 +1,11 @@
+Costruisci un database con le informazioni dei dipendenti di un'azienda e dei dipartimenti dove lavorano, compresa la qualifica ad essi assegnata:
+Dipartimenti(ID, Descrizione)
+Dipendenti(Matricola, Cognome, Nome, Qualifica, CodiceDipartimento)
+Id e Matricola sono chiavi primarie, CodiceDipeartimento è le chiave esterna. Prevedi le seguenti funzionalità:
+
+
+Creare le pagine web per inserire i dati nelle tabelle;
+Creare una pagina web per ottenere l'elenco di tutti i dipendenti;
+
+creare una pagina web per ottenere l'elenco dei dipendenti di un dipartimento il cui codice viene fornito dall'utente tramite una casella di testo
+creare una pagina web per ottenere l'elenco dei dipendenti di una qualifica fornita tramite una casella di testo
